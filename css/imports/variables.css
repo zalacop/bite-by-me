@@ -1,10 +1,10 @@
 :root {
     --background: #FFF8FB;
     --cta-colour: #9E2C4B;
-    --header: #BF545A;
+    --header: #C5646A;
     --text-colour: #360101;
     --extra-colour: #F4D791;
-    --footer-colour: rgba(191, 84, 90, 0.8);
+    --footer-colour: rgba(197, 100, 106, 0.9);
 
     --heading-font: 'Quicksand';
     --body-text: 'Inconsolata';

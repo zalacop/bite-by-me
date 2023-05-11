@@ -16,16 +16,26 @@ main {
 header {
     background-color: var(--header);
     padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h1 {
+h1,
+h4 {
     font-family: var(--bite-font), Verdana, Geneva, Tahoma, sans-serif;
     color: var(--text-colour);
-    font-size: 2.5rem;
+    font-size: 2.5em;
     margin: 65px 0 0 0;
 }
 
-h2, a {
+h4 {
+    font-size: 1em;
+    margin: 0;
+}
+
+h2, 
+a {
     font-family: var(--cta-font), Verdana, Geneva, Tahoma, sans-serif;
     color: var(--text-colour);
     text-decoration: none;
@@ -41,6 +51,13 @@ nav ul {
 
 nav li {
     display: block;
+    width: 100px;
+}
+
+.fa-magnifying-glass {
+    color: var(--text-colour);
+    font-size: 1.5em;
+    margin-right: 5%;
 }
 
 .logo {
@@ -61,6 +78,22 @@ nav li {
 
 footer {
     background-color: var(--footer-colour);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.logo-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin: 0 5% 0 0;
+    width: 150px;
+}
+
+.logo-footer img {
+    width: 40px;
 }
 
 h2 {
@@ -68,14 +101,26 @@ h2 {
     margin: 5px;
 }
 
-h3 {
+h3,
+label {
     font-family: var(--heading-font), Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--text-colour);
+    font-weight: bold;
+}
+
+p,
+.form_error {
+    font-family: var(--body-text), Georgia, 'Times New Roman', Times, serif;
     color: var(--text-colour);
 }
 
-p {
-    font-family: var(--body-text), Georgia, 'Times New Roman', Times, serif;
-    color: var(--text-colour);
+label {
+    margin: 0 0 10px 5px;
+}
+
+.form_error {
+    color: var(--cta-colour);
+    margin: 5px 0 0 0;
 }
 
 .recipe__options {
@@ -97,13 +142,132 @@ p {
     filter: drop-shadow(10px 10px 10px var(--text-colour));
 }
 
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10%;
+}
+
 .cakes img {
     width: 50px;
-    margin: 5px auto;
     padding: 0;
     display: flex;
+    margin: 5px auto;
 }
 
 .cakes h3 {
    margin: 0;
+}
+
+button {
+    padding: 10px 45px;
+    margin: 20px auto;
+    background-color: var(--cta-colour);
+    color: var(--background);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    letter-spacing: 0.1em;
+    box-shadow: 0 0 20px var(--cta-colour);
+}
+
+.about {
+    width: 40%;
+    background-color: var(--extra-colour);
+    padding: 40px;
+}
+
+.follow {
+    background-color: var(--header);
+    width: 30%;
+    padding: 30px;
+    height: 120px;
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.follow h3 {
+    margin: auto;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fa-brands {
+    color: var(--text-colour);
+    font-size: 50px;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    gap: 2em;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input,
+#message {
+    width: 400px;
+    border-radius: 2px;
+    border: 1px solid var(--text-colour);
+}
+
+input {
+    height: 40px;
+}
+
+#message {
+    height: 130px;
+
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.images {
+    display: flex;
+    margin: 50px 10%;
+    height: 700px;
+    gap: 2em;
+    justify-content: space-evenly;
+}
+
+.bottom_img {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    width: 800px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: min(1200px, 80%);
 }
