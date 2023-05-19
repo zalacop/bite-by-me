@@ -214,7 +214,7 @@ button:hover {
 form {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: 50px auto;
     gap: 2em;
 }
@@ -239,7 +239,6 @@ input {
 
 #message {
     height: 130px;
-
 }
 
 .input {

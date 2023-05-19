@@ -12,19 +12,23 @@ const messageError = document.querySelector("#messageError");
 function validateForm(event) {
     event.preventDefault();
 
-    validateLength(nameError, name.value, 4, "Name must have at least 5 characters");
-    if(validateEmail(email.value) === true) {
-        emailError.style.display = "none";
-    } else {
-        emailError.innerHTML = `<p class="form_error">Please enter a valid email address</p>`;
-    }
-    validateLength(subjectError, subject.value, 14, "Subject must have at least 15 characters");
-    validateLength(messageError, message.value, 24, "Message must have at least 25 characters");
+    const isValidName = validateLength(nameError, name.value, 4, "Name must have at least 5 characters");
+    const isValidEmail = validateEmail(email.value);
+    const isValidSubject = validateLength(subjectError, subject.value, 14, "Subject must have at least 15 characters");
+    const isValidMessage = validateLength(messageError, message.value, 24, "Message must have at least 25 characters");
 
+    return isValidName && isValidEmail && isValidSubject && isValidMessage;
+}
+
+// adding successful message
+function messageSent(event) {
+    if(validateForm(event) === true) {
+        return form.innerHTML = `<p>Message was sent successfully!</p>`;
+    }
 }
 
 // adding event listener for submitting the validateForm function
-form.addEventListener("submit", validateForm);
+form.addEventListener("submit", messageSent);
 
 // making a reusable function to check the length
 function checkLength(value, len) {
@@ -35,8 +39,10 @@ function checkLength(value, len) {
 function validateLength(errorType, value, minLength, error) {
     if(checkLength(value, minLength) === true) {
         errorType.style.display = "none";
+        return true;
     } else {
         errorType.innerHTML = `<p class="form_error">${error}</p>`;
+        return false;
     }
 }
 
@@ -44,5 +50,10 @@ function validateLength(errorType, value, minLength, error) {
 function validateEmail(email) {
     const regEx = /^([a-zA-Z0-9._]+)@([a-zA-Z0-9])+\.([a-z])/;
     const patternMatches = regEx.test(email);
+    if(patternMatches) {
+        emailError.style.display = "none";
+    } else {
+        emailError.innerHTML = `<p class="form_error">Please enter a valid email address</p>`;
+    }
     return patternMatches;
 }
