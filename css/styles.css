@@ -54,6 +54,11 @@ nav li {
     width: 100px;
 }
 
+nav li a:hover,
+.active {
+    text-decoration: underline;
+}
+
 .fa-magnifying-glass {
     color: var(--text-colour);
     font-size: 1.5em;
@@ -108,6 +113,22 @@ label {
     font-weight: bold;
 }
 
+button {
+    padding: 10px 45px;
+    margin: 20px auto;
+    background-color: var(--cta-colour);
+    color: var(--background);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    letter-spacing: 0.1em;
+    box-shadow: 0 0 20px var(--cta-colour);
+}
+
 p,
 .form_error {
     font-family: var(--body-text), Georgia, 'Times New Roman', Times, serif;
@@ -123,10 +144,74 @@ label {
     margin: 5px 0 0 0;
 }
 
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2em;
+    align-items: center;
+    position: relative;
+    width: 800px;
+    overflow: hidden;
+    margin: 50px auto;
+}
+
+.arrow-left,
+.arrow-right {
+    padding: 3px 10px;
+    font-size: 1.5em;
+    position: absolute;
+    z-index: 1;
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
+
+.slider {
+    display: flex;
+    scroll-behavior: smooth;
+    gap: 2em;
+}
+
+.post {
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.post img {
+    width: 100%;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.post h3,
+.post p,
+.post button {
+    grid-column-start: 2;
+}
+
+.post p {
+    grid-row-start: 2;
+    font-size: 1em;
+}
+
+.post button {
+    grid-row-start: 3;
+}
+
 .recipe__options {
     display: flex;
     width: 60%;
-    margin: 0 auto;
+    margin: 50px auto;
     justify-content: space-between;
 }
 
@@ -157,22 +242,6 @@ label {
 
 .cakes h3 {
    margin: 0;
-}
-
-button {
-    padding: 10px 45px;
-    margin: 20px auto;
-    background-color: var(--cta-colour);
-    color: var(--background);
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-button:hover {
-    letter-spacing: 0.1em;
-    box-shadow: 0 0 20px var(--cta-colour);
 }
 
 .about {

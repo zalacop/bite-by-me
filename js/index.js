@@ -1,4 +1,4 @@
-const slider = document.querySelector(".carousel");
+
 
 const localHost = "https://www.webupload.no";
 const wordPress = "/wp-json/wp/v2";
@@ -16,17 +16,19 @@ async function getSliderPosts() {
         const getPosts = await fetch(urlPosts);
         const posts = await getPosts.json();
 
-        slider.innerHTML = " ";
+        // slider.innerHTML = " ";
     
         for (let i = 0; i < posts.length; i++) {
             const getTitle = posts[i].title;
             const postTitle = getTitle.rendered;
-            const tryImage = posts[i]._embedded["wp:featuredmedia"][0].source_url;
+            const postImages = posts[i]._embedded["wp:featuredmedia"][0].source_url;
+            const altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
+            const postText = posts[i].excerpt.rendered;
     
-            console.log(postTitle);
+            // console.log(postText);
     
             // creating the slider on home page
-            slider.innerHTML = ``
+            // slider.innerHTML = ``
         }
 
     } catch (error) { // catching if an error occours
