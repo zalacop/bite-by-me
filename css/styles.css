@@ -90,12 +90,14 @@ nav li a:hover,
 }
 
 .loading {
+    display: flex;
     height: 100px;
     width: 100px;
     border: 20px dashed var(--cta-colour);
     border-radius: 50%;
     animation: spin 1.8s ease-in infinite;
     margin: 0 300px;
+
 }
 
 @keyframes spin {
