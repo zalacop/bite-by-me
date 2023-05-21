@@ -46,6 +46,7 @@ async function getSliderPosts() {
                                     <button>Show More</button>
                                 </div>
                                 <div class="post" id="firstPostClone">
+                                    <img src="${posts[1]._embedded["wp:featuredmedia"][0].source_url}" alt="${posts[1]._embedded["wp:featuredmedia"][0].alt_text}">
                                     <h3>${posts[1].title.rendered}</h3>
                                     <p>${posts[1].excerpt.rendered}</p>
                                     <button>Show More</button>
