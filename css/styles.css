@@ -35,7 +35,8 @@ h4 {
 }
 
 h2, 
-a {
+a,
+.error_message {
     font-family: var(--cta-font), Verdana, Geneva, Tahoma, sans-serif;
     color: var(--text-colour);
     text-decoration: none;
@@ -79,6 +80,28 @@ nav li a:hover,
     grid-column-start: 2;
     width: 120px;
     padding: 0;
+}
+
+.error_message {
+    color: var(--cta-colour);
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+}
+
+.loading {
+    height: 100px;
+    width: 100px;
+    border: 20px dashed var(--cta-colour);
+    border-radius: 50%;
+    animation: spin 1.8s ease-in infinite;
+    margin: 0 300px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 footer {
@@ -147,20 +170,25 @@ label {
 .carousel {
     display: grid;
     grid-auto-flow: column;
-    gap: 2em;
     align-items: center;
     position: relative;
-    width: 800px;
+    width: 900px;
     overflow: hidden;
-    margin: 50px auto;
+    margin: 100px auto;
 }
 
 .arrow-left,
 .arrow-right {
     padding: 3px 10px;
-    font-size: 1.5em;
+    font-size: 1.2em;
     position: absolute;
     z-index: 1;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    box-shadow: none;
+    font-size: 1.5em;
 }
 
 .arrow-left {
@@ -174,17 +202,16 @@ label {
 .slider {
     display: flex;
     scroll-behavior: smooth;
-    gap: 2em;
 }
 
 .post {
     width: 800px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 0 50px;
 }
 
 .post img {
@@ -199,9 +226,18 @@ label {
     grid-column-start: 2;
 }
 
+.post h3,
+.post p {
+    margin: 0 0 0 20px;
+}
+
+.post h3 {
+    font-size: 1em;
+}
+
 .post p {
     grid-row-start: 2;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .post button {
