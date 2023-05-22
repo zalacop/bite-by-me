@@ -1,54 +1,53 @@
-import {urlPosts, localHost, wordPress, posts, endpoint} from "/js/imortsJS/url.js";
+import {urlFeatured, host, wordPress, posts, endpoint} from "/js/imortsJS/url.js";
 
 async function getSliderPosts() {
 
     // fetching the JSON and catching error message
     try {
-        const getPosts = await fetch(urlPosts);
-        const posts = await getPosts.json();
+        const getFeaturedPosts = await fetch(urlFeatured);
+        const featuredPosts = await getFeaturedPosts.json();
     
-        for (let i = 0; i < posts.length; i++) {
-            // const getTitle = posts[i].title;
-            // const postTitle = getTitle.rendered;
-            // const postImages = posts[i]._embedded["wp:featuredmedia"][0].source_url;
-            // const altText = posts[i]._embedded["wp:featuredmedia"][0].alt_text;
-            // const postText = posts[i].excerpt.rendered;
-    
+        for (let i = 0; i < featuredPosts.length; i++) {
+            // const getFeaturedTitle = featuredPosts[i].title;
+            // const featuredTitle = getFeaturedTitle.rendered;
+            // const featuredImages = featuredPosts[i]._embedded["wp:featuredmedia"][0].source_url;
+            // const featuredAltText = featuredPosts[i]._embedded["wp:featuredmedia"][0].alt_text;
+            
             // creating the slider on home page
             slider.innerHTML = `<div class="post" id="lastPostClone">
-                                    <img src="${posts[8]._embedded["wp:featuredmedia"][0].source_url}" alt="${posts[8]._embedded["wp:featuredmedia"][0].alt_text}">
-                                    <h3>${posts[8].title.rendered}</h3>
-                                    <p>${posts[8].excerpt.rendered}</p>
+                                    <img src="${featuredPosts[3]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[3]._embedded["wp:featuredmedia"][0].alt_text}">
+                                    <h3>${featuredPosts[3].title.rendered}</h3>
+                                    <p>${featuredPosts[3].excerpt.rendered}</p>
                                     <button>Show More</button>
                                 </div>
                                 <div class="post">
-                                    <img src="${posts[1]._embedded["wp:featuredmedia"][0].source_url}" alt="${posts[1]._embedded["wp:featuredmedia"][0].alt_text}">
-                                    <h3>${posts[1].title.rendered}</h3>
-                                    <p>${posts[1].excerpt.rendered}</p>
+                                    <img src="${featuredPosts[0]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[0]._embedded["wp:featuredmedia"][0].alt_text}">
+                                    <h3>${featuredPosts[0].title.rendered}</h3>
+                                    <p>${featuredPosts[0].excerpt.rendered}</p>
                                     <button>Show More</button>
                                 </div>
                                 <div class="post">
-                                    <img src="${posts[3]._embedded["wp:featuredmedia"][0].source_url}" alt="${posts[3]._embedded["wp:featuredmedia"][0].alt_text}">
-                                    <h3>${posts[3].title.rendered}</h3>
-                                    <p>${posts[3].excerpt.rendered}</p>
+                                    <img src="${featuredPosts[1]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[1]._embedded["wp:featuredmedia"][0].alt_text}">
+                                    <h3>${featuredPosts[1].title.rendered}</h3>
+                                    <p>${featuredPosts[1].excerpt.rendered}</p>
                                     <button>Show More</button>
                                 </div>
                                 <div class="post">
-                                    <img src="${posts[6]._embedded["wp:featuredmedia"][0].source_url}" alt="${posts[6]._embedded["wp:featuredmedia"][0].alt_text}">
-                                    <h3>${posts[6].title.rendered}</h3>
-                                    <p>${posts[6].excerpt.rendered}</p>
+                                    <img src="${featuredPosts[2]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[2]._embedded["wp:featuredmedia"][0].alt_text}">
+                                    <h3>${featuredPosts[2].title.rendered}</h3>
+                                    <p>${featuredPosts[2].excerpt.rendered}</p>
                                     <button>Show More</button>
                                 </div>
                                 <div class="post">
-                                    <img src="${posts[8]._embedded["wp:featuredmedia"][0].source_url}" alt="${posts[8]._embedded["wp:featuredmedia"][0].alt_text}">
-                                    <h3>${posts[8].title.rendered}</h3>
-                                    <p>${posts[8].excerpt.rendered}</p>
+                                    <img src="${featuredPosts[3]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[3]._embedded["wp:featuredmedia"][0].alt_text}">
+                                    <h3>${featuredPosts[3].title.rendered}</h3>
+                                    <p>${featuredPosts[3].excerpt.rendered}</p>
                                     <button>Show More</button>
                                 </div>
                                 <div class="post" id="firstPostClone">
-                                    <img src="${posts[1]._embedded["wp:featuredmedia"][0].source_url}" alt="${posts[1]._embedded["wp:featuredmedia"][0].alt_text}">
-                                    <h3>${posts[1].title.rendered}</h3>
-                                    <p>${posts[1].excerpt.rendered}</p>
+                                    <img src="${featuredPosts[0]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[0]._embedded["wp:featuredmedia"][0].alt_text}">
+                                    <h3>${featuredPosts[0].title.rendered}</h3>
+                                    <p>${featuredPosts[0].excerpt.rendered}</p>
                                     <button>Show More</button>
                                 </div>`
         }
