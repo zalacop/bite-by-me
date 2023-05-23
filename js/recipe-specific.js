@@ -48,11 +48,37 @@ async function findRecipe() {
         recipeContainer.innerHTML = `<div class="above_post"><a href="recipes-list.html" class="go-back">Back to recipes!</a>
                                     <p>${postDate}</p></div>
                                         <div class="recipe">
-                                            <img src="${image}" alt="${imageAltText}" class="modal">
+                                            <img src="${image}" alt="${imageAltText}" id="modal_img">
+                                            <dialog id="modal">
+                                                <img src="${image}" alt="${imageAltText}" id="modal_img">
+                                            </dialog>
                                             <h3>${recipeTitle}</h3>
                                             <div clss="content">${content}</div>
                                         </div>`;
 
+
+        // making modal functional
+        const modalContainer = document.getElementById("modal");
+        const openModal = document.getElementById("modal_img");
+        const modal = document.querySelector("dialog");
+
+        function activateModal() {
+            modalContainer.showModal();
+        }
+
+        // function closeModal(event) {
+        //     if (event.target === modalContainer)
+        //     modalContainer.close();
+        // }
+
+        function closeModal() {
+            modalContainer.close();
+        }
+
+        openModal.addEventListener("click", activateModal);
+        modal.addEventListener("click", closeModal);
+
+        console.log(modal)
 
     } catch(error) {// catching if an error occours
         console.log(error);

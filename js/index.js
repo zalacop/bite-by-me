@@ -12,43 +12,45 @@ async function getSliderPosts() {
             // const featuredTitle = getFeaturedTitle.rendered;
             // const featuredImages = featuredPosts[i]._embedded["wp:featuredmedia"][0].source_url;
             // const featuredAltText = featuredPosts[i]._embedded["wp:featuredmedia"][0].alt_text;
+
+            console.log(featuredPosts[i].id)
             
             // creating the slider on home page
             slider.innerHTML = `<div class="post" id="lastPostClone">
                                     <img src="${featuredPosts[3]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[3]._embedded["wp:featuredmedia"][0].alt_text}">
                                     <h3>${featuredPosts[3].title.rendered}</h3>
                                     <p>${featuredPosts[3].excerpt.rendered}</p>
-                                    <button>Show More</button>
+                                    <a href="recipe.html?recipe=${featuredPosts[3].id}"><button>Show More</button></a>
                                 </div>
                                 <div class="post">
                                     <img src="${featuredPosts[0]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[0]._embedded["wp:featuredmedia"][0].alt_text}">
                                     <h3>${featuredPosts[0].title.rendered}</h3>
                                     <p>${featuredPosts[0].excerpt.rendered}</p>
-                                    <button>Show More</button>
+                                    <a href="recipe.html?recipe=${featuredPosts[0].id}"><button>Show More</button></a>
                                 </div>
                                 <div class="post">
                                     <img src="${featuredPosts[1]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[1]._embedded["wp:featuredmedia"][0].alt_text}">
                                     <h3>${featuredPosts[1].title.rendered}</h3>
                                     <p>${featuredPosts[1].excerpt.rendered}</p>
-                                    <button>Show More</button>
+                                    <a href="recipe.html?recipe=${featuredPosts[1].id}"><button>Show More</button></a>
                                 </div>
                                 <div class="post">
                                     <img src="${featuredPosts[2]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[2]._embedded["wp:featuredmedia"][0].alt_text}">
                                     <h3>${featuredPosts[2].title.rendered}</h3>
                                     <p>${featuredPosts[2].excerpt.rendered}</p>
-                                    <button>Show More</button>
+                                    <a href="recipe.html?recipe=${featuredPosts[2].id}"><button>Show More</button></a>
                                 </div>
                                 <div class="post">
                                     <img src="${featuredPosts[3]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[3]._embedded["wp:featuredmedia"][0].alt_text}">
                                     <h3>${featuredPosts[3].title.rendered}</h3>
                                     <p>${featuredPosts[3].excerpt.rendered}</p>
-                                    <button>Show More</button>
+                                    <a href="recipe.html?recipe=${featuredPosts[3].id}"><button>Show More</button></a>
                                 </div>
                                 <div class="post" id="firstPostClone">
                                     <img src="${featuredPosts[0]._embedded["wp:featuredmedia"][0].source_url}" alt="${featuredPosts[0]._embedded["wp:featuredmedia"][0].alt_text}">
                                     <h3>${featuredPosts[0].title.rendered}</h3>
                                     <p>${featuredPosts[0].excerpt.rendered}</p>
-                                    <button>Show More</button>
+                                    <a href="recipe.html?recipe=${featuredPosts[0].id}"><button>Show More</button></a>
                                 </div>`
         }
 

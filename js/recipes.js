@@ -19,7 +19,7 @@ async function getRecipesPosts() {
             console.log(recipeImageAltText)
 
             // creating html
-            recipesContainer.innerHTML += `<a href="recipe.html?recipe=${recipes[i].id}"<div class="recipePost">
+            recipesContainer.innerHTML += `<a href="recipe.html?recipe=${recipes[i].id}"><div class="recipePost">
                                             <img src="${recipes[i]._embedded["wp:featuredmedia"][0].source_url}" alt="${recipes[i]._embedded["wp:featuredmedia"][0].alt_text}">
                                             <h3>${recipes[i].title.rendered}</h3>
                                             </div></a>`;
