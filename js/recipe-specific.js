@@ -11,15 +11,11 @@ const id = params.get("recipe");
 const urlRecipe = host + wordPress + posts + "/" + id + endpoint ;
 
 // finding the chosen recipe 
-async function findRecipe() {
+async function findRecipe(id) {
     try {
         const response = await fetch(urlRecipe);
         const recipe = await response.json();
-        const recipeTitle = recipe.title.rendered;
-        const image = recipe._embedded["wp:featuredmedia"][0].source_url;
-        const imageAltText = recipe._embedded["wp:featuredmedia"][0].alt_text;
-        const content = recipe.content.rendered;
-        
+
         // getting the date without the time
         let getDate = new Date(recipe.date);
         const createDate = {
@@ -28,65 +24,96 @@ async function findRecipe() {
             year: "numeric"
         };
 
-        const postDate = getDate.toLocaleDateString("en-GB", createDate);
+        const recipeData = {
+            "date": getDate.toLocaleDateString("en-GB", createDate),
+            "title": recipe.title.rendered,
+            "image": recipe._embedded["wp:featuredmedia"][0].source_url,
+            "imageAltText": recipe._embedded["wp:featuredmedia"][0].alt_text,
+            "content": recipe.content.rendered
 
-
-        // adding name property to the title and fixed encoding 
-        const title = recipeTitle;
-        function removeOuterTags(inputString) {
-            const parser = new DOMParser();
-            const getTitle = parser.parseFromString(inputString, "text/html");
-            return getTitle.body.innerText;
         }
 
-        const inputString = `<p>${recipeTitle}</p>`;
-        const newTitle = removeOuterTags(inputString);
-
-        document.title = newTitle;
-
-        // creating html content 
-        recipeContainer.innerHTML = `<div class="above_post"><a href="recipes-list.html" class="go-back">Back to recipes!</a>
-                                    <p>${postDate}</p></div>
-                                        <div class="recipe">
-                                            <img src="${image}" alt="${imageAltText}" id="modal_img">
-                                            <dialog id="modal">
-                                                <img src="${image}" alt="${imageAltText}" id="modal_img">
-                                            </dialog>
-                                            <h3>${recipeTitle}</h3>
-                                            <div clss="content">${content}</div>
-                                        </div>`;
-
-
-        // making modal functional
-        const modalContainer = document.getElementById("modal");
-        const openModal = document.getElementById("modal_img");
-        const modal = document.querySelector("dialog");
-
-        function activateModal() {
-            modalContainer.showModal();
-        }
-
-        // function closeModal(event) {
-        //     if (event.target === modalContainer)
-        //     modalContainer.close();
-        // }
-
-        function closeModal() {
-            modalContainer.close();
-        }
-
-        openModal.addEventListener("click", activateModal);
-        modal.addEventListener("click", closeModal);
-
-        console.log(modal)
+       
+        return recipeData;
 
     } catch(error) {// catching if an error occours
         console.log(error);
 
         // displaying error message
         recipeContainer.innerHTML = errorMessage(); 
-
     }
 }
 
-findRecipe();
+// creating html
+async function recipeHTML() {
+    const recipeHTML = await findRecipe(id);
+    
+    recipeContainer.innerHTML = `<div class="above_post"><a href="recipes-list.html" class="go-back">Back to recipes!</a>
+                                 <p>${recipeHTML.date}</p></div>
+                                     <div class="recipe">
+                                         <img src="${recipeHTML.image}" alt="${recipeHTML.imageAltText}" id="modal_img">
+                                         <dialog id="modal">
+                                             <img src="${recipeHTML.image}" alt="${recipeHTML.imageAltText}" id="modal_img">
+                                         </dialog>
+                                         <h3>${recipeHTML.title}</h3>
+                                         <div clss="content">${recipeHTML.content}</div>
+                                    </div>`;
+
+}
+
+recipeHTML();
+
+// setting recipe title as a title
+async function changeTitle() {
+    const getTitle = await findRecipe(id);
+
+    // adding name property to the title and fixed encoding 
+    const title = getTitle.title;
+
+    function removeOuterTags(inputString) {
+        const parser = new DOMParser();
+        const recipeTitle = parser.parseFromString(inputString, "text/html");
+        return recipeTitle.body.innerText;
+    }
+
+    const inputString = `<p>${getTitle.title}</p>`;
+    const newTitle = removeOuterTags(inputString);
+
+    document.title = newTitle;
+}
+
+changeTitle();
+
+ // making modal functional
+async function activateModal() {
+    const modalImage = await findRecipe(id);
+    
+    const modalContainer = document.getElementById("modal");
+    const openModal = document.getElementById("modal_img");
+    const modal = document.querySelector("dialog");
+
+    function openImage() {
+        modalContainer.showModal();
+    }
+
+    function closeImage() {
+        modalContainer.close();
+    }
+
+    openModal.addEventListener("click", openImage);
+    modal.addEventListener("click", closeImage);
+}
+
+activateModal();
+
+
+        // function activateModal() {
+        //     modalContainer.showModal();
+        // }
+
+        // function closeModal() {
+        //     modalContainer.close();
+        // }
+
+        // openModal.addEventListener("click", activateModal);
+        // modal.addEventListener("click", closeModal);
