@@ -10,7 +10,7 @@ const id = params.get("recipe");
 const urlRecipe = host + wordPress + posts + "/" + id + endpoint ;
 
 // finding the chosen recipe 
-async function findRecipe(id) {
+async function findRecipe() {
     try {
         const response = await fetch(urlRecipe);
         const recipe = await response.json();

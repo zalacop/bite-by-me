@@ -10,8 +10,8 @@ async function fetchRecipes(pageNumber, numberOfRecipes) {
         const getPosts = await fetch(urlPosts + `&per_page=${numberOfRecipes}&page=${pageNumber}`);
         const recipes = await getPosts.json();
         
+        // checking if it's an array or something else
         if (Array.isArray(recipes)) {
-            console.log(recipes)
             const recipePosts = recipes.map((recipe) => {
                 const data = {
                     "id": recipe.id,
