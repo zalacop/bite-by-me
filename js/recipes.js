@@ -10,20 +10,24 @@ async function fetchRecipes(pageNumber, numberOfRecipes) {
         const getPosts = await fetch(urlPosts + `&per_page=${numberOfRecipes}&page=${pageNumber}`);
         const recipes = await getPosts.json();
         
-        const recipePosts = recipes.map((recipe) => {
-            const data = {
-                "id": recipe.id,
-                "imageURL": recipe._embedded["wp:featuredmedia"][0].source_url,
-                "imageAltText": recipe._embedded["wp:featuredmedia"][0].alt_text,
-                "title": recipe.title.rendered
-            }
-            
-            return data;
-        } )
-
-        return recipePosts;
-
-
+        if (Array.isArray(recipes)) {
+            console.log(recipes)
+            const recipePosts = recipes.map((recipe) => {
+                const data = {
+                    "id": recipe.id,
+                    "imageURL": recipe._embedded["wp:featuredmedia"][0].source_url,
+                    "imageAltText": recipe._embedded["wp:featuredmedia"][0].alt_text,
+                    "title": recipe.title.rendered
+                }
+                
+                return data;
+            } )
+    
+            return recipePosts;
+        } else {
+            return null;
+        }
+    
 
     } catch (error) { // catching if an error occours
         console.log(error);
@@ -55,12 +59,24 @@ async function getRecipesHTML() {
    
    recipesContainer.innerHTML += creatHTML(posts);
 
-    // loading 10 more posts
+    // loading 10 more posts for each click
     showMore.addEventListener("click", async () => {
         pageNumber ++;
         const morePosts = await fetchRecipes(pageNumber, 10);
-        recipesContainer.innerHTML += creatHTML(morePosts);
+        
+        // if there is no more posts, hide the button
+        if(morePosts === null) {
+            showMore.style.display = "none";
+        } 
+        // if there is less than 10 post, it means we're at the last page, so add the post and hide the button
+        if (morePosts.length < 10) {
+            showMore.style.display = "none";
+            recipesContainer.innerHTML += creatHTML(morePosts);
+        } else {
+            recipesContainer.innerHTML += creatHTML(morePosts);
+        }
     })
+
 }
 
 getRecipesHTML();
