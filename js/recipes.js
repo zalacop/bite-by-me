@@ -27,8 +27,6 @@ async function fetchRecipes(pageNumber, numberOfRecipes) {
         } else {
             return null;
         }
-    
-
     } catch (error) { // catching if an error occours
         console.log(error);
 
@@ -51,10 +49,10 @@ async function getRecipesHTML() {
             <h3>${post.title}</h3>
         </div></a>`
     })
-    .join("");
+    .join(""); // joining a list of html string to a single strig
    }
 
-   // first posts
+   // first 10 posts
    const posts = await fetchRecipes(pageNumber, 10);
    
    recipesContainer.innerHTML += creatHTML(posts);
@@ -67,16 +65,15 @@ async function getRecipesHTML() {
         // if there is no more posts, hide the button
         if(morePosts === null) {
             showMore.style.display = "none";
-        } 
+        }
         // if there is less than 10 post, it means we're at the last page, so add the post and hide the button
-        if (morePosts.length < 10) {
+        else if (morePosts.length < 10) {
             showMore.style.display = "none";
             recipesContainer.innerHTML += creatHTML(morePosts);
         } else {
             recipesContainer.innerHTML += creatHTML(morePosts);
         }
     })
-
 }
 
 getRecipesHTML();
