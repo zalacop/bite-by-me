@@ -2,7 +2,6 @@ import { host, wordPress, posts, endpoint } from "./imortsJS/url.js";
 
 const recipeContainer = document.querySelector(".recipe_container");
 
-
 // adding a variable to href value, retrieving it from the query string and using it in an api call
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -30,12 +29,9 @@ async function findRecipe(id) {
             "image": recipe._embedded["wp:featuredmedia"][0].source_url,
             "imageAltText": recipe._embedded["wp:featuredmedia"][0].alt_text,
             "content": recipe.content.rendered
-
         }
 
-       
         return recipeData;
-
     } catch(error) {// catching if an error occours
         console.log(error);
 
@@ -84,7 +80,7 @@ async function changeTitle() {
 
 changeTitle();
 
- // making modal functional
+// making modal functional
 async function activateModal() {
     const modalImage = await findRecipe(id);
     
@@ -105,15 +101,3 @@ async function activateModal() {
 }
 
 activateModal();
-
-
-        // function activateModal() {
-        //     modalContainer.showModal();
-        // }
-
-        // function closeModal() {
-        //     modalContainer.close();
-        // }
-
-        // openModal.addEventListener("click", activateModal);
-        // modal.addEventListener("click", closeModal);
