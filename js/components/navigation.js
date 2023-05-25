@@ -3,11 +3,11 @@ const menu = document.querySelector(".menu ul");
 
 function activateMenu() {
     var clicks = 1;
-    if (menu.style.display === "none") {
-        menu.style.display = "flex";
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
         clicks = 1;
     } else {
-        menu.style.display =  "none";
+        menu.style.display =  "flex";
         clicks = 2;
     }
 }
