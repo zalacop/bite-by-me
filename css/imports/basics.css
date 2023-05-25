@@ -1,0 +1,182 @@
+/* fonts and text colour*/
+
+h1,
+h4 {
+    font-family: var(--bite-font), Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.5em;
+    margin: 65px 0 0 0;
+}
+
+h2, 
+a,
+.error_message {
+    font-family: var(--cta-font), Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+p,
+.form_error,
+ul {
+    font-family: var(--body-text), Georgia, 'Times New Roman', Times, serif;
+}
+
+h3,
+label {
+    font-family: var(--heading-font), Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+h1,
+h2, 
+h3,
+h4,
+a,
+.error_message,
+p,
+.form_error,
+ul,
+label {
+    color: var(--text-colour);
+}
+
+
+/* header, footer & body structure*/
+
+body {
+    background-color: var(--background);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body,
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header {
+    background-color: var(--header);
+    padding: 5px;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.fa-bars {
+    display: none;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 0;
+}
+
+nav ul, 
+.logo_mobile,
+.logo-footer,
+.error_message {
+    display: flex;
+}
+
+nav ul {
+    flex-direction: row;
+    gap: 2%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav li {
+    display: block;
+    width: 100px;
+}
+
+nav li a:hover,
+.active {
+    text-decoration: underline;
+}
+
+.fa-magnifying-glass {
+    color: var(--text-colour);
+    font-size: 1.5em;
+    margin-right: 5%;
+}
+
+.logo {
+    margin: 20px 35%;
+}
+
+.logo_img {
+    grid-column-start: 2;
+    width: 120px;
+    padding: 0;
+}
+
+footer {
+    background-color: var(--footer-colour);
+    padding: 5px;
+}
+
+.logo-footer {
+    flex-direction: row;
+    align-items: baseline;
+    margin: 0 5% 0 0;
+    width: 150px;
+}
+
+.logo-footer img {
+    width: 40px;
+}
+
+h2 {
+    font-size: 1rem;
+    margin: 5px;
+}
+
+.error_message {
+    color: var(--cta-colour);
+    font-size: 3em;
+    justify-content: center;
+}
+
+/* loading and buttons*/
+
+.loading {
+    height: 100px;
+    width: 100px;
+    border: 20px dashed var(--cta-colour);
+    border-radius: 50%;
+    animation: spin 1.8s ease-in infinite;
+    margin: 0 300px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button {
+    padding: 10px 45px;
+    margin: 20px auto;
+    background-color: var(--cta-colour);
+    color: var(--background);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover {
+    letter-spacing: 0.1em;
+    box-shadow: 0 0 20px var(--cta-colour);
+}

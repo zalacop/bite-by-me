@@ -1,165 +1,7 @@
 @import "imports/variables.css";
-
-body {
-    background-color: var(--background);
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex-grow: 1;
-}
-
-header {
-    background-color: var(--header);
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-h1,
-h4 {
-    font-family: var(--bite-font), Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--text-colour);
-    font-size: 2.5em;
-    margin: 65px 0 0 0;
-}
-
-h4 {
-    font-size: 1em;
-    margin: 0;
-}
-
-h2, 
-a,
-.error_message {
-    font-family: var(--cta-font), Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--text-colour);
-    text-decoration: none;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    gap: 2%;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-nav li {
-    display: block;
-    width: 100px;
-}
-
-nav li a:hover,
-.active {
-    text-decoration: underline;
-}
-
-.fa-magnifying-glass {
-    color: var(--text-colour);
-    font-size: 1.5em;
-    margin-right: 5%;
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 35%;
-}
-
-.logo_mobile {
-    display: flex;
-}
-
-.logo_img {
-    grid-column-start: 2;
-    width: 120px;
-    padding: 0;
-}
-
-.error_message {
-    color: var(--cta-colour);
-    font-size: 3em;
-    display: flex;
-    justify-content: center;
-}
-
-.loading {
-    height: 100px;
-    width: 100px;
-    border: 20px dashed var(--cta-colour);
-    border-radius: 50%;
-    animation: spin 1.8s ease-in infinite;
-    margin: 0 300px;
-
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-footer {
-    background-color: var(--footer-colour);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-}
-
-.logo-footer {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    margin: 0 5% 0 0;
-    width: 150px;
-}
-
-.logo-footer img {
-    width: 40px;
-}
-
-h2 {
-    font-size: 1rem;
-    margin: 5px;
-}
-
-h3,
-label {
-    font-family: var(--heading-font), Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--text-colour);
-    font-weight: bold;
-}
-
-button {
-    padding: 10px 45px;
-    margin: 20px auto;
-    background-color: var(--cta-colour);
-    color: var(--background);
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-button:hover {
-    letter-spacing: 0.1em;
-    box-shadow: 0 0 20px var(--cta-colour);
-}
+@import "imports/basics.css";
 
 /* Contact page */
-p,
-.form_error,
-ul {
-    font-family: var(--body-text), Georgia, 'Times New Roman', Times, serif;
-    color: var(--text-colour);
-}
 
 label {
     margin: 0 0 10px 5px;
@@ -170,25 +12,31 @@ label {
     margin: 5px 0 0 0;
 }
 
-.contact {
+.contact,
+form,
+.column,
+.input {
     display: flex;
     justify-content: center;
+}
+
+.contact {
     margin: 50px 0 0 0;
 }
 
 form {
-    display: flex;
-    justify-content: center;
     align-items: flex-start;
     margin: 50px auto;
     gap: 2em;
 }
 
-.column {
-    display: flex;
+.column,
+input {
     flex-direction: column;
+}
+
+.column {
     align-items: center;
-    justify-content: center;
 }
 
 input,
@@ -207,16 +55,19 @@ input {
 }
 
 .input {
-    display: flex;
-    flex-direction: column;
     margin: 10px;
 }
 
 /* Home page */
-.carousel {
+
+.carousel,
+.post {
     display: grid;
-    grid-auto-flow: column;
     align-items: center;
+}
+
+.carousel {
+    grid-auto-flow: column;
     position: relative;
     width: 900px;
     overflow: hidden;
@@ -252,10 +103,8 @@ input {
 
 .post {
     width: 800px;
-    display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    align-items: center;
     margin: 0 auto;
     padding: 0 50px;
 }
@@ -286,15 +135,27 @@ input {
     font-size: 0.8em;
 }
 
+.post button,
+.cakes,
+.recipe__options,
+.info,
+.cakes img,
+.follow,
+.icons {
+    display: flex;
+}
+
+.post button,
+.cakes {
+    justify-content: center;
+}
+
 .post button {
     grid-row-start: 3;
-    display: flex;
-    justify-content: center;
     margin: 0 auto;
 }
 
 .recipe__options {
-    display: flex;
     width: 60%;
     margin: 50px auto;
     justify-content: space-between;
@@ -305,15 +166,19 @@ input {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    display: flex;
-    justify-content: center;
     align-items: center;
     gap: 10px;
     filter: drop-shadow(10px 10px 10px var(--text-colour));
+    transition: ease-in-out 0.4s;
+}
+
+.cakes:hover {
+    letter-spacing: 0.1em;
+    filter: drop-shadow(15px 15px 10px var(--text-colour));
+    width: 155px;
 }
 
 .info {
-    display: flex;
     justify-content: space-between;
     margin: 10%;
 }
@@ -321,7 +186,6 @@ input {
 .cakes img {
     width: 50px;
     padding: 0;
-    display: flex;
     margin: 5px auto;
 }
 
@@ -341,7 +205,6 @@ input {
     padding: 30px;
     height: 120px;
     margin: 40px 0 0 0;
-    display: flex;
     flex-direction: column;
 }
 
@@ -350,7 +213,6 @@ input {
 }
 
 .icons {
-    display: flex;
     justify-content: space-evenly;
 }
 
@@ -361,31 +223,38 @@ input {
 
 /* About page  */
 
-.images {
+.images,
+.bottom_img,
+.text {
     display: flex;
+}
+
+.images {
     margin: 50px 10%;
     height: 700px;
     gap: 2em;
     justify-content: space-evenly;
 }
 
-.bottom_img {
-    display: flex;
+.bottom_img,
+.text {
     justify-content: center;
+}
+
+.bottom_img {
     margin: 50px auto;
     width: 800px;
 }
 
 .text {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: 0 auto;
     width: min(1200px, 80%);
 }
 
 /* Recipes page  */
+
 .recipes_container {
     display: grid;
     grid-template-rows: 1.5fr 0.5fr;
@@ -409,6 +278,7 @@ input {
     box-shadow: 5px 5px 5px var(--text-colour);
     border-radius: 2px;
     width: 100%;
+    height: 400px;
     transition: 0.4s ease-in-out;
 }
 
@@ -429,8 +299,15 @@ input {
 }
 
 /* Recipe specific page  */
-.above_post {
+
+.above_post,
+.recipe_container,
+.recipe,
+#modal_img {
     display: flex;
+}
+
+.above_post {
     width: 90%;
     justify-content: space-between;
 }
@@ -441,7 +318,6 @@ input {
 }
 
 .recipe_container {
-    display: flex;
     flex-direction: column;
     gap: 3em;
     width: 90%;
@@ -450,7 +326,6 @@ input {
 }
 
 .recipe {
-    display: flex;
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
@@ -458,7 +333,6 @@ input {
 
 #modal_img {
     width: 50%;
-    display: flex;
     justify-content: center;
     margin: 0 auto 30px auto;
 }
@@ -478,13 +352,10 @@ dialog {
 }
 
 dialog #modal_img {
-    width: 80%;
+    width: 1100px;
+    height: 750px;
     position: fixed;
-    left: 10%;
-
+    top: 80px;
+    left: 15%;
+    object-fit: contain;
 }
-
-/* #modal {
-    background-color: var(--modal-colour);
-    height: 100%;
-} */

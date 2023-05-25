@@ -19,10 +19,8 @@ async function fetchRecipes(pageNumber, numberOfRecipes) {
                     "imageAltText": recipe._embedded["wp:featuredmedia"][0].alt_text,
                     "title": recipe.title.rendered
                 }
-                
                 return data;
             } )
-    
             return recipePosts;
         } else {
             return null;
