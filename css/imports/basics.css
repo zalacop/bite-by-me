@@ -12,6 +12,7 @@ a,
 .error_message {
     font-family: var(--cta-font), Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
+    font-size: clamp(0.8em, 2.5vw, 1.1em);
 }
 
 p,
@@ -38,7 +39,6 @@ ul,
 label {
     color: var(--text-colour);
 }
-
 
 /* header, footer & body structure*/
 
@@ -97,7 +97,7 @@ nav ul {
 
 nav li {
     display: block;
-    width: 100px;
+    width: 120px;
 }
 
 nav li a:hover,
@@ -107,7 +107,7 @@ nav li a:hover,
 
 .fa-magnifying-glass {
     color: var(--text-colour);
-    font-size: 1.5em;
+    font-size: clamp(1.2em, 2.5vw, 1.5em);
     margin-right: 5%;
 }
 
@@ -117,7 +117,8 @@ nav li a:hover,
 
 .logo_img {
     grid-column-start: 2;
-    width: 120px;
+    width: 125px;
+    height: 125px;
     padding: 0;
 }
 
