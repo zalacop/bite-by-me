@@ -31,7 +31,7 @@ form {
 }
 
 .column,
-input {
+.input {
     flex-direction: column;
 }
 
