@@ -55,7 +55,6 @@
     .bottom_img {
         width: 80%;
     }
-
 }
 
 @media (max-width:910px) {
@@ -92,13 +91,11 @@
         width: 500px;
     }
 
-
     .info {
         flex-direction: column;
         justify-content: center;
         width: 80%;
     }
-
 }
 
 @media (max-width: 750px){
@@ -114,15 +111,10 @@
         width: 90px;
     }
 
-    .recipes_list {
-        display: flex;
+    form {
         flex-direction: column;
     }
     
-}
-
-@media (max-width: 650px) {
-     
 }
 
 @media (max-width: 550px) {
@@ -177,6 +169,12 @@
    .images img {
        height: 300px;
    }
+
+   input {
+    width: 250px;
+   }
+
+  
 }
 
 
