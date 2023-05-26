@@ -1,10 +1,50 @@
-@media (max-width:950px) {
-    .logo_img {
-        height: 110px;
+@media (max-width:1300px) {
+    h1 {
+        font-size: 2.25em;
+        margin-top: 75px;
+    }
+
+    h2 {
+        font-size: 0.9em;
     }
 }
 
-@media (max-width:900px) {
+@media (max-width:1200px) {
+    h1 {
+        font-size: clamp(1.4em, 2.5vw, 2.1em);
+    }
+
+    h2 {
+        font-size: 0.8em;
+    }
+}
+@media (max-width:1150px) {
+    h2 {
+        font-size: 0.65em;
+    }
+}
+
+@media (max-width:950px) {
+    .logo_img {
+        height: 110px;
+        width: 110px;
+    }
+
+    .carousel {
+        width: 675px;
+    }
+
+    .post {
+        width: 600px;
+    }
+
+}
+
+@media (max-width:910px) {
+    h2 {
+        font-size: 0.6;
+    }
+
     .logo_img {
         height: 100px;
     }
@@ -13,7 +53,34 @@
 @media (max-width: 850px) {
     .logo_img {
         height: 90px;
+        width: 90px;
     }
+
+    h1 {
+        margin: 0;
+        width: 60px;
+        text-align: end;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .carousel {
+        width: 575px;
+    }
+
+    .post {
+        width: 500px;
+    }
+
+
+    .info {
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
+    }
+
 }
 
 @media (max-width: 750px){
@@ -23,25 +90,16 @@
         display: flex;
         margin: 0;
         align-items: center;
-        font-size: 1.4em;
     }
 
-    .logo h2 {
-        display: none;
-    }
-
-    
-
-}
-
-@media (max-width: 750px) {
     .logo_img {
         width: 90px;
     }
+    
 }
 
-@media (max-width: 600px) {
-   
+@media (max-width: 650px) {
+     
 }
 
 @media (max-width: 550px) {
@@ -50,23 +108,49 @@
     }
 
    .fa-bars {
-    display: block;
-    font-size: 1.3em;
-    margin-left: 10%;
-    cursor: pointer;
+        display: block;
+        font-size: 1.3em;
+        margin-left: 10%;
+        cursor: pointer;
    }
 
    .menu ul {
-    flex-direction: column;
-    position: fixed;
-    top: 50px;
-    gap: 10px;
-    left: 0;
-    background-color: var(--footer-colour);
-    width: 100%;
-    padding: 20px 0 20px 50px;
-    margin: 0;
-    font-size: 1.2em;
-    display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 50px;
+        gap: 10px;
+        left: 0;
+        background-color: var(--footer-colour);
+        width: 100%;
+        padding: 20px 0 20px 50px;
+        margin: 0;
+        font-size: 1.2em;
+        display: none;
    }
+
+   footer nav {
+        display: none;
+   }
+
+   footer {
+        display: flex;
+       justify-content: end;
+   }
+
+    .carousel {
+        width: 325px;
+    }
+    
+    .post {
+        width: 250px;
+    } 
 }
+
+@media (max-width: 420px) {
+     .menu ul {
+        font-size: 1em;
+     }
+}
+
+
+

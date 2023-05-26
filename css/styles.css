@@ -70,7 +70,7 @@ input {
 .carousel {
     grid-auto-flow: column;
     position: relative;
-    width: 900px;
+    width: 875px;
     overflow: hidden;
     margin: 100px auto;
 }
@@ -78,7 +78,7 @@ input {
 .arrow-left,
 .arrow-right {
     padding: 3px 10px;
-    font-size: 1.2em;
+    font-size: clamp(1em, 1vw, 1.2em);
     position: absolute;
     z-index: 1;
 }
@@ -100,18 +100,20 @@ input {
 .slider {
     display: flex;
     scroll-behavior: smooth;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .post {
     width: 800px;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
+    padding: 0 35px;
     margin: 0 auto;
-    padding: 0 50px;
 }
 
 .post img {
-    width: 100%;
+    max-width: 100%;
     grid-row-start: 1;
     grid-row-end: 4;
 }
@@ -128,7 +130,7 @@ input {
 }
 
 .post h3 {
-    font-size: 1em;
+    font-size: clamp(0.7em, 50px, 1em);
 }
 
 .post p {
@@ -138,7 +140,6 @@ input {
 
 .post button,
 .cakes,
-.recipe__options,
 .info,
 .cakes img,
 .follow,
@@ -157,6 +158,7 @@ input {
 }
 
 .recipe__options {
+    display: flex;
     width: 60%;
     margin: 50px auto;
     justify-content: space-between;
@@ -177,6 +179,7 @@ input {
     letter-spacing: 0.1em;
     filter: drop-shadow(15px 15px 10px var(--text-colour));
     width: 155px;
+    z-index: 1;
 }
 
 .info {
@@ -192,6 +195,7 @@ input {
 
 .cakes h3 {
    margin: 0;
+   font-size: 1.1em;
 }
 
 .about {
@@ -360,3 +364,142 @@ dialog #modal_img {
     left: 15%;
     object-fit: contain;
 }
+
+/* Media queries that don't work from the media.css import*/
+
+@media (max-width:1150px) {
+    .recipe__options {
+        width: 75%;
+    }
+}
+
+@media (max-width:1050px) {
+    .carousel {
+        width: 775px;
+    }
+
+    .post {
+        width: 700px;
+    }
+
+    .recipe__options {
+        width: 75%;
+    }
+
+    .cakes {
+        width: 130px;
+        height: 130px;
+    }
+
+    .cakes h3 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .about {
+        width: 80%;
+    }
+    
+    .follow {
+        width: 60%;
+    }
+
+    .fa-brands {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    .carousel {
+        width: 575px;
+    }
+    
+    .post {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }  
+
+    .recipe__options {
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3em;
+    }
+}
+
+@media (max-width: 650px) {
+    .carousel {
+        width: 425px;
+    }
+    
+    .post {
+        width: 350px;
+    }  
+    .cakes {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 550px) {
+    .cakes {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .cakes:hover {
+        width: 105px;
+        height: 105px;
+        z-index: 1;
+    }
+
+    .cakes img {
+        width: 30px;
+    }
+
+    .cakes h3 {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 420px) {
+    .carousel {
+        width: 325px;
+    }
+    
+    .post {
+        width: 230px;
+    }  
+
+    .recipe__options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .cakes {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .cakes:hover {
+        width: 125px;
+        height: 125px;
+    }
+
+    .cakes img {
+        width: 40px;
+    }
+
+    .cakes h3 {
+        font-size: 0.9em;
+    }
+}
+
+
