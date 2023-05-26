@@ -38,6 +38,10 @@
         width: 600px;
     }
 
+    .bottom_img {
+        width: 80%;
+    }
+
 }
 
 @media (max-width:910px) {
@@ -146,10 +150,30 @@
     } 
 }
 
+@media (max-width: 480px) {
+   .images {
+       flex-direction: column;
+   }
+
+   .images img {
+       height: 300px;
+   }
+}
+
+
 @media (max-width: 420px) {
      .menu ul {
         font-size: 1em;
-     }
+    }
+
+    .images {
+        flex-direction: column;
+    }
+
+    .images img {
+        height: 300px;
+        object-fit: cover;
+    }
 }
 
 

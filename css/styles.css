@@ -236,9 +236,13 @@ input {
 
 .images {
     margin: 50px 10%;
-    height: 700px;
     gap: 2em;
     justify-content: space-evenly;
+    width: min(1200px, 80%);
+}
+
+.images img {
+    width: 100%;
 }
 
 .bottom_img,
@@ -396,6 +400,12 @@ dialog #modal_img {
     }
 }
 
+@media (max-width: 950px) {
+    .bottom_img {
+        width: 80%;
+    }
+}
+
 @media (max-width: 850px) {
 
     .about {
@@ -463,6 +473,10 @@ dialog #modal_img {
 
     .cakes h3 {
         font-size: 0.8em;
+    }
+
+    .images img {
+        object-fit: cover;
     }
 }
 
