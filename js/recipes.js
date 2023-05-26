@@ -43,7 +43,7 @@ async function getRecipesHTML() {
    function creatHTML(posts) {
     return  posts.map((post) => {
         return `<a href="recipe.html?recipe=${post.id}"><div class="recipePost">
-            <img src="${post.imageURL}" alt="${post.imageAltText}" />
+            <img src="${post.imageURL}" alt="${post.imageAltText}" class="recipe_img" />
             <h3>${post.title}</h3>
         </div></a>`
     })

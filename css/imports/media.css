@@ -7,6 +7,10 @@
     h2 {
         font-size: 0.9em;
     }
+
+    .recipePost h3 {
+        font-size: 1em;
+    }
 }
 
 @media (max-width:1200px) {
@@ -17,10 +21,20 @@
     h2 {
         font-size: 0.8em;
     }
+
+    .recipePost h3 {
+        font-size: 1em;
+    }
 }
 @media (max-width:1150px) {
     h2 {
         font-size: 0.65em;
+    }
+}
+
+@media (max-width:1050px) {
+    .recipePost {
+        height: 370px;
     }
 }
 
@@ -98,6 +112,11 @@
 
     .logo_img {
         width: 90px;
+    }
+
+    .recipes_list {
+        display: flex;
+        flex-direction: column;
     }
     
 }
