@@ -464,6 +464,10 @@ dialog #modal_img {
 }
 
 @media (max-width: 800px) {
+    .logo {
+        width: 160px;
+    }
+
     .carousel {
         width: 575px;
     }
@@ -570,6 +574,19 @@ dialog #modal_img {
 }
 
 @media (max-width: 480px) {
+    .carousel {
+        width: 325px;
+    }
+    
+    .post {
+        width: 230px;
+    }  
+
+    .recipe__options {
+        width: 90%;
+        margin: 0 auto;
+    }
+
     input,
     #message {
      width: 250px;
@@ -583,14 +600,6 @@ dialog #modal_img {
  
 
 @media (max-width: 420px) {
-    .carousel {
-        width: 325px;
-    }
-    
-    .post {
-        width: 230px;
-    }  
-
     .recipe__options {
         display: flex;
         flex-direction: column;
