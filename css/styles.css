@@ -1,392 +1,15 @@
 @import "imports/variables.css";
 @import "imports/basics.css";
 @import "imports/media.css";
-
-/* Contact page */
-
-label {
-    margin: 0 0 10px 5px;
-}
-
-.form_error {
-    color: var(--cta-colour);
-    margin: 5px 0 0 0;
-}
-
-.contact,
-form,
-.column,
-.input {
-    display: flex;
-    justify-content: center;
-}
-
-.contact {
-    margin: 50px auto 0 auto;
-    width: 90%;
-}
-
-form {
-    align-items: flex-start;
-    margin: 50px auto;
-    gap: 2em;
-    width: 90%;
-}
-
-.column,
-.input {
-    flex-direction: column;
-}
-
-.column {
-    align-items: center;
-}
-
-input,
-#message {
-    width: 400px;
-    border-radius: 2px;
-    border: 1px solid var(--text-colour);
-}
-
-input {
-    height: 40px;
-}
-
-#message {
-    height: 130px;
-}
-
-.input {
-    margin: 10px;
-}
-
-/* Home page */
-
-.carousel,
-.post {
-    display: grid;
-    align-items: center;
-}
-
-.carousel {
-    grid-auto-flow: column;
-    position: relative;
-    width: 875px;
-    overflow: hidden;
-    margin: 100px auto;
-}
-
-.arrow-left,
-.arrow-right {
-    padding: 3px 10px;
-    font-size: clamp(1em, 1vw, 1.2em);
-    position: absolute;
-    z-index: 1;
-}
-
-.arrow-left:hover,
-.arrow-right:hover {
-    box-shadow: none;
-    font-size: 1.5em;
-}
-
-.arrow-left {
-    left: 0;
-}
-
-.arrow-right {
-    right: 0;
-}
-
-.slider {
-    display: flex;
-    scroll-behavior: smooth;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.post {
-    width: 800px;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-    padding: 0 35px;
-    margin: 0 auto;
-}
-
-.post img {
-    max-width: 100%;
-    grid-row-start: 1;
-    grid-row-end: 4;
-}
-
-.post h3,
-.post p,
-.post button {
-    grid-column-start: 2;
-}
-
-.post h3,
-.post p {
-    margin: 0 0 0 20px;
-}
-
-.post h3 {
-    font-size: clamp(0.7em, 50px, 1em);
-}
-
-.post p {
-    grid-row-start: 2;
-    font-size: 0.8em;
-}
-
-.post button,
-.cakes,
-.info,
-.cakes img,
-.follow,
-.icons {
-    display: flex;
-}
-
-.post button,
-.cakes {
-    justify-content: center;
-}
-
-.post button {
-    grid-row-start: 3;
-    margin: 0 auto;
-}
-
-.recipe__options {
-    display: flex;
-    width: 60%;
-    margin: 50px auto;
-    justify-content: space-between;
-}
-
-.cakes {
-    background-color: var(--extra-colour);
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    align-items: center;
-    gap: 10px;
-    filter: drop-shadow(10px 10px 10px var(--text-colour));
-    transition: ease-in-out 0.4s;
-}
-
-.cakes:hover {
-    letter-spacing: 0.1em;
-    filter: drop-shadow(15px 15px 10px var(--text-colour));
-    width: 155px;
-    z-index: 1;
-}
-
-.info {
-    justify-content: space-between;
-    margin: 10%;
-}
-
-.cakes img {
-    width: 50px;
-    padding: 0;
-    margin: 5px auto;
-}
-
-.cakes h3 {
-   margin: 0;
-   font-size: 1.1em;
-}
-
-.about {
-    width: 40%;
-    background-color: var(--extra-colour);
-    padding: 40px;
-}
-
-.follow {
-    background-color: var(--header);
-    width: 30%;
-    padding: 30px;
-    height: 120px;
-    margin: 40px 0 0 0;
-    flex-direction: column;
-}
-
-.follow h3 {
-    margin: auto;
-}
-
-.icons {
-    justify-content: space-evenly;
-}
-
-.fa-brands {
-    color: var(--text-colour);
-    font-size: 50px;
-}
-
-/* About page  */
-
-.images,
-.bottom_img,
-.text {
-    display: flex;
-}
-
-.images {
-    margin: 50px 10%;
-    gap: 2em;
-    justify-content: space-evenly;
-    width: min(1200px, 80%);
-    margin: 50px auto;
-}
-
-.images img {
-    width: 100%;
-}
-
-.bottom_img,
-.text {
-    justify-content: center;
-}
-
-.bottom_img {
-    margin: 50px auto;
-    width: 800px;
-}
-
-.text {
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    width: min(1200px, 80%);
-}
-
-/* Recipes page  */
-
-.recipes_container {
-    display: grid;
-    grid-template-rows: 1.5fr 0.5fr;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.recipes_list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5%;
-    justify-content: space-evenly;
-    margin: 100px auto;
-    width: 80%;
-}
-
-.recipePost {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--cta-colour);
-    box-shadow: 5px 5px 5px var(--text-colour);
-    border-radius: 2px;
-    width: 100%;
-    height: 410px;
-    transition: 0.4s ease-in-out;
-}
-
-.recipePost:hover {
-    box-shadow: 10px 10px 10px var(--text-colour);
-    width: 101%;
-    z-index: 1;
-}
-
-.recipe_img {
-    width: 100%;
-    min-height: 290px;
-    object-fit: cover;
-    margin: 0;
-}
-
-.recipePost h3 {
-    margin: 10px;
-}
-
-/* Recipe specific page  */
-
-.above_post,
-.recipe_container,
-.recipe,
-#modal_img {
-    display: flex;
-}
-
-.above_post {
-    width: 90%;
-    justify-content: space-between;
-}
-
-.go-back {
-    text-decoration: underline;
-    font-size: clamp(1.2em, 1.5vw, 1.5em);
-}
-
-.recipe_container {
-    flex-direction: column;
-    gap: 3em;
-    width: 90%;
-    justify-content: center;
-    margin: 50px auto;
-}
-
-.recipe {
-    flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
-}
-
-.recipe div {
-    display: flex;
-    flex-direction: column;
-    width: min(1200px, 80%);
-    justify-content: center;
-    text-align: start;
-    margin: 20px auto;
-}
-
-.recipe h3 {
-    margin: 0 10%;
-}
-
-#modal_img {
-    width: min(1000px, 70%);
-    justify-content: center;
-    margin: 0 auto 30px auto;
-}
-
-#modal_img:hover {
-    cursor: pointer;
-}
-
-dialog {
-    z-index: 1;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--modal-colour);
-    padding-top: 200px;
-    border: none;
-    margin: 0;
-}
-
-dialog #modal_img {
-    width: min(1200px 100%);
-    height: 750px;
-    position: fixed;
-    top: 0;
-    left: 15%;
-    object-fit: contain;
-}
+@import "imports/first-style.css";
 
 /* Media queries that don't work from the media.css import*/
+
+@media (min-width:1800px) {
+    dialog #modal_img {
+        left: 25%;
+    }
+}
 
 @media (max-width:1150px) {
     .recipe__options {
@@ -445,8 +68,7 @@ dialog #modal_img {
     input,
     #message {
         width: 350px;
-    }    
-
+    }
 }
 
 @media (max-width: 850px) {
@@ -476,8 +98,13 @@ dialog #modal_img {
         width: 500px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
     }  
+
+    .post h3,
+    .post p {
+        margin: 0;
+    }
 
     .recipe__options {
         width: 50%;
@@ -542,6 +169,15 @@ dialog #modal_img {
         width: 100px;
         height: 100px;
     }
+
+    .cakes h3 {
+        font-size: 0.7em;
+    }
+
+    .cakes:hover {
+        width: 105px;
+        height: 105px;
+    }
 }
 
 @media (max-width: 550px) {
@@ -604,8 +240,7 @@ dialog #modal_img {
     #message {
         height: 100px;
     }
- }
- 
+}
 
 @media (max-width: 420px) {
     .recipe__options {
@@ -634,5 +269,3 @@ dialog #modal_img {
         font-size: 1em;
     }
 }
-
-

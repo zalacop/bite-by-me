@@ -1,3 +1,9 @@
+@media (min-width:1300px) {
+    dialog #modal_img {
+        left: 20%;
+    }
+}
+
 @media (max-width:1300px) {
     h1 {
         font-size: 2.25em;
@@ -114,7 +120,6 @@
     form {
         flex-direction: column;
     }
-    
 }
 
 @media (max-width: 550px) {
@@ -127,7 +132,7 @@
         font-size: 1.3em;
         margin-left: 10%;
         cursor: pointer;
-   }
+    }
 
    .menu ul {
         flex-direction: column;
@@ -141,16 +146,16 @@
         margin: 0;
         font-size: 1.2em;
         display: none;
-   }
+    }
 
    footer nav {
         display: none;
-   }
+    }
 
    footer {
         display: flex;
        justify-content: end;
-   }
+    }
 
     .carousel {
         width: 325px;
@@ -169,14 +174,7 @@
    .images img {
        height: 300px;
    }
-
-   input {
-    width: 250px;
-   }
-
-  
 }
-
 
 @media (max-width: 420px) {
      .menu ul {
@@ -192,6 +190,3 @@
         object-fit: cover;
     }
 }
-
-
-
