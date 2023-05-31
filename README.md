@@ -4,7 +4,7 @@
 
 ![image of homepage](doc/homepage.png)
 
-This is a blog website created for a school assginment. It is a baking blog website with different recipes hosted in WordPress.
+This is a blog website created for a school assignment. It is a baking blog website with different recipes hosted in WordPress.
 
 ### Notable features
 
